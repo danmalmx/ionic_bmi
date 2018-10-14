@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage } from 'ionic-angular';
+import { NavController, NavParams} from "ionic-angular";
 
 @IonicPage()
 @Component({
@@ -14,6 +14,9 @@ export class CalculatorPage {
   bmiMessage: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.weight = 70;
+    this.height = 170;
   }
 
     calculateBMI() {
@@ -38,9 +41,5 @@ export class CalculatorPage {
     if (this.bmiValue > 30) {
       this.bmiMessage = "Obese"
     }
-  }
-  
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CalculatorPage');
   }
 }

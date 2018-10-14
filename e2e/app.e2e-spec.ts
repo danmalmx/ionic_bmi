@@ -1,27 +1,27 @@
-import { Page } from './app.po';
+import { Calculator } from './app.po';
 
 describe('App', () => {
-  let page: Page;
+  let calulator: Calculator;
 
   beforeEach(() => {
-    page = new Page();
+    calulator = new Calculator();
   });
 
   describe('default screen', () => {
     beforeEach(() => {
-      page.navigateTo('/');
+        calulator.navigateTo('/');
     });
 
-    it('should have a title saying Page One', () => {
-      page.getPageOneTitleText().then(title => {
-        expect(title).toEqual('Page One');
+    it('should have a title saying calculator', () => {
+        calulator.getPageOneTitleText().then(title => {
+        expect(title).toEqual('calculator');
       });
     });
   })
 
     it('fill in form', () => {
-        page.fillInForm(70, 170);
-        expect(page.results_card_header()).toContain('Cooper Test Result');
-        expect(page.results_card_content()).toContain('Gender: female, Age: 20  Result: Poor');
+        calulator.fillInForm(70, 170);
+        expect(calulator.results_card_header()).toContain('BMI Calculations');
+        expect(calulator.results_card_content()).toContain('BMI: 24.22, You are Normal');
     });
 });
