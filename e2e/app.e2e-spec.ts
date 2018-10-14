@@ -17,6 +17,13 @@ describe('App', () => {
         expect(title).toEqual('calculator');
       });
     });
+
+    it('should have an input field weight', () => {
+      calulator.weightInput().then(weight => {
+      expect(weight).toEqual('Weight (kg)');
+    });
+  });
+
   })
 
     it('fill in form', () => {

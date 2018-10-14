@@ -14,6 +14,13 @@ export class Calculator {
     return element(by.tagName('calculator')).element(by.tagName('ion-title')).getText();
   }
 
+  weightInput() {
+    return element(by.id('lbl-0')).getText();  }
+
+  heightInput() {
+    return element(by.tagName('Height (cm)')).element(by.tagName('ion-label')).getText();
+  }
+
   fillInForm(weight, height) {
 
     element(by.css('.text-input')).clear().then(() => {  // first we need to clear the default value

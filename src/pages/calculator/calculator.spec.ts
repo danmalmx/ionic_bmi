@@ -44,23 +44,22 @@ describe("CalculatorPage", () => {
     expect(NavController).toBeTruthy();
   });
 
-  it('should have default values', () => {
-    expect(calculatorpage.calculateBMI).toEqual({ weight: 70, height: 170 });
-  });
-
   it('should have calculate function', () => {
     spyOn(calculatorpage, 'calculateBMI'); 
   });
 
+  it('should have default values', () => {
+    expect(calculatorpage).toEqual({ weight: 70, height: 170 });
+  });
+
   it('should have a function that calculates BMI', () => { 
-    calculatorpage.calculateBMI()
 
-    calculatorpage.weight = 70
-    calculatorpage.height = 170
-    calculatorpage.bmiValue = 24.22
-    calculatorpage.bmiMessage = 'Normal' 
+    calculatorpage.weight = 70;
+    calculatorpage.height = 170;
+    calculatorpage.bmiValue = 24.22;
+    calculatorpage.bmiMessage = 'Normal';
 
-    expect(calculatorpage.calculateBMI).toHaveBeenCalled();
+    calculatorpage.calculateBMI();
   });
 
   it('should show Underweight if bmi is below 18.5', () => {
